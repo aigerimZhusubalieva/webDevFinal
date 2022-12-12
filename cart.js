@@ -1,22 +1,45 @@
 const products = [
   {
     id: 0,
-    cost: 200,
-    name: "Web dev course",
+    cost: 20,
+    name: "Black T-Shirt Peppa Pig",
     imageUrl:
-      "https://img.freepik.com/free-vector/hand-drawn-web-developers_23-2148819604.jpg?w=2000",
+      "https://m.media-amazon.com/images/I/A13usaonutL._AC_CLa%7C2140%2C2000%7C71v7DX0HEVL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_UY1000_.png",
   },
   {
     id: 1,
-    cost: 10,
-    name: "Figma course",
-    imageUrl: "https://i.ytimg.com/vi/g6rQFP9zCAM/maxresdefault.jpg",
+    cost: 22,
+    name: "Mommy Pig T-Shirt",
+    imageUrl:
+      "https://m.media-amazon.com/images/I/B139gQIcJCS._AC_CLa%7C2140%2C2000%7C81wBA6ji6bL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_UY1000_.png",
   },
   {
     id: 2,
     cost: 120,
-    name: "Figma tutorial",
-    imageUrl: "https://i.ytimg.com/vi/ks4g08InpOg/hqdefault.jpg",
+    name: "Papa Pig Dad Joke T-Shirt",
+    imageUrl:
+      "https://i5.walmartimages.com/asr/468a4668-95b1-4280-b195-ff34eca75cb9.f3cbefa4c929211284622593ef104441.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+  },
+  {
+    id: 3,
+    cost: 10,
+    name: "Thug Life",
+    imageUrl:
+      "https://graphicteeshq.com/wp-content/uploads/2019/10/Peppa-Pig-Thug-Life.jpg",
+  },
+  {
+    id: 4,
+    cost: 100,
+    name: "Daddy",
+    imageUrl:
+      "https://peppatees.com/wp-content/uploads/Peppa-Pig-Daddy-Pig-Kids-T-Shirt-Navy.jpg",
+  },
+  {
+    id: 5,
+    cost: 22.90,
+    name: "Daddy",
+    imageUrl:
+      "https://cdn.media.amplience.net/s/hottopic/14352701_hi?$productMainDesktop$",
   },
 ];
 
