@@ -54,3 +54,77 @@ h1, h2, h3, h4, h5, h6, button, a, .peppaFont{
 	position: relative;
 	bottom: 120px;
 }
+
+.tourDiv {
+	background-color: #1E123A;
+	color: white;
+}
+
+.cityBar {
+	color: #1E123A;
+	background-color: #ffafdf;
+	transition-duration: 0.3s;
+	border: solid #ff8bd1 !important;
+
+}
+
+.cityBar:hover {
+	background-color: #ff8bd1;
+}
+
+#nyc, #seattle, #la, #london, #paris, #rome, #ad, #tokyo, #sydney {
+	width: 35%;
+	border-color: #ff8bd1; 
+	border-radius: 3px;
+	box-sizing: border-box;
+	display: inline;
+	margin-left: 10%;
+	resize: vertical;
+}
+
+.buyButton {
+	color: #1E123A;
+	background-color: #ffafdf;
+	transition-duration: 0.3s;
+	border: solid #ff8bd1 !important;
+  	padding: 8px 16px;
+  	text-align: center;
+  	display: inline-block;
+  	border-radius: 12px;
+  	transition-duration: 0.3s;
+  	cursor: pointer;
+  	text-decoration: none;
+  	margin-bottom: 10%;
+}
+
+.buyButton:hover {
+	background-color: #ff8bd1;
+}
+
+.tourCart {
+	background-color: #5bc2e7;
+	padding: 2%; 
+}
+
+input[type=text], select, textarea {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #a7767c;
+  border-radius: 3px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+input[type=number], input[type=email], select, textarea {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #a7767c;
+  border-radius: 3px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.receipt {
+	border-radius: 10px;
+	padding: 10px;
+}
