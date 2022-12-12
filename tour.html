@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Peppa Pig Official</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="icon" type="image/x-icon" href="img/icon1.png">
+<script type="text/javascript" src="script.js" defer></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+      <script>
+      $(document).ready(function(){
+          $("#janCities").hide();
+          $("#febCities").hide();
+          $("#marCities").hide();
+          $("#hiddenCart").hide();
+
+      });
+
+      function janShow() {
+        $("#janCities").hide();
+        $("#febCities").hide();
+        $("#marCities").hide();
+        $("#janCities").show();
+      }
+      function febShow() {
+        $("#janCities").hide();
+        $("#febCities").hide();
+        $("#marCities").hide();
+        $("#febCities").show();
+      }
+      function marShow() {
+        $("#janCities").hide();
+        $("#febCities").hide();
+        $("#marCities").hide();
+        $("#marCities").show();
+      }
+
+      function showCart() {
+        $("#hiddenCart").show();
+      }
+      </script>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="tour.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">TOUR</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="merch.html" class="w3-bar-item w3-button">Merchandise</a>
+        <a href="media.html" class="w3-bar-item w3-button">Media</a>
+        <a href="newsletter.html" class="w3-bar-item w3-button">Newsletter</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="index.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
+  <a href="tour.html" class="w3-bar-item w3-button w3-padding-large">TOUR</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
+  <a href="merch.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
+  <a href="media.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MEDIA</a>
+  <a href="newsletter.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">NEWSLETTER</a>
+</div>
+
+<div class="mySlides w3-display-container w3-center">
+  <img src="img/concert.png" style="width:100%; margin-top:46px;">
+</div>
+
+<div class="tourDiv" id="tour">
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+      <h2 class="w3-wide w3-center">TOUR DATES</h2>
+      <p class="w3-opacity w3-center"><i>Remember to book your tickets!</i></p><br>
+
+      <ul class="w3-ul">
+        <li class="w3-padding cityBar" onclick="janShow()">January <span class="w3-badge w3-right w3-margin-right">3</span></li>
+        <li class="w3-padding cityBar" onclick="febShow()">February <span class="w3-badge w3-right w3-margin-right">3</span></li>
+        <li class="w3-padding cityBar" onclick="marShow()">March <span class="w3-badge w3-right w3-margin-right">3</span></li>
+      </ul>
+
+      <div id="janCities" class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+        <div class="w3-third w3-margin-bottom">
+          <img src="img/nyc.jpeg" alt="New York" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>New York City, New York</b></p>
+            <p class="w3-opacity">8 January 2023</p>
+            <p class="w3-opacity">Price: $79</p>
+            <button class="buyButton">Add to Cart</button><input style="width:30%;" id="nyc" type="number">
+          </div>
+        </div>
+        <div class="w3-third w3-margin-bottom">
+          <img src="img/seattle.jpeg" alt="Seattle" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>Seattle, Washington</b></p>
+            <p class="w3-opacity">15 January 2023</p>
+            <p class="w3-opacity">Price: $79</p>
+            <button class="buyButton">Add to Cart</button><input style="width:30%;" id="seattle" type="number">
+          </div>
+        </div>
+        <div class="w3-third w3-margin-bottom">
+          <img src="img/la.jpeg" alt="Los Angeles" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>Los Angeles, California</b></p>
+            <p class="w3-opacity">24 January 2023</p>
+            <p class="w3-opacity">Price: $79</p>
+            <button class="buyButton">Add to Cart</button><input style="width:30%;" id="la" type="number">
+          </div>
+        </div>
+      </div>
+      <div id="febCities" class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+        <div class="w3-third w3-margin-bottom">
+          <img src="img/london.jpeg" alt="London" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>London, UK</b></p>
+            <p class="w3-opacity">2 February 2023</p>
+            <p class="w3-opacity">Price: $79</p>
+            <button class="buyButton">Add to Cart</button><input style="width:30%;" id="london"type="number">
+          </div>
+        </div>
+        <div class="w3-third w3-margin-bottom">
+          <img src="img/paris.jpeg" alt="Paris" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>Paris, France</b></p>
+            <p class="w3-opacity">12 February 2023</p>
+            <p class="w3-opacity">Price: $79</p>
+            <button class="buyButton">Add to Cart</button><input style="width:30%;" id="paris" type="number">
+          </div>
+        </div>
+        <div class="w3-third w3-margin-bottom">
+          <img src="img/rome.jpeg" alt="Rome" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>Rome, Italy</b></p>
+            <p class="w3-opacity">20 February</p>
+            <p class="w3-opacity">Price: $79</p>
+            <button class="buyButton">Add to Cart</button><input style="width:30%;" id="rome" type="number">
+          </div>
+        </div>
+      </div>
+      <div id="marCities" class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+        <div class="w3-third w3-margin-bottom">
+          <img src="img/ad.jpeg" alt="Abu Dhabi" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>Abu Dhabi, UAE</b></p>
+            <p class="w3-opacity">3 March 2023</p>
+            <p class="w3-opacity">Price: $79</p>
+            <button class="buyButton">Add to Cart</button><input style="width:30%;" id="ad" type="number">
+          </div>
+        </div>
+        <div class="w3-third w3-margin-bottom">
+          <img src="img/tokyo.jpeg" alt="Tokyo" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>Tokyo, Japan</b></p>
+            <p class="w3-opacity">14 March 2023</p>
+            <p class="w3-opacity">Price: $79</p>
+            <button class="buyButton">Add to Cart</button><input style="width:30%;" id="tokyo" type="number">
+          </div>
+        </div>
+        <div class="w3-third w3-margin-bottom">
+          <img src="img/sydney.jpeg" alt="Sydney" style="width:100%" class="w3-hover-opacity">
+          <div class="w3-container w3-white">
+            <p><b>Sydney</b></p>
+            <p class="w3-opacity">29 March 2023</p>
+            <p class="w3-opacity">Price: $79</p>
+            <button class="buyButton">Add to Cart</button><input style="width:30%;" id="sydney" type="number">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tourCart">
+    <button class="buyButton" onclick="showCart()">My Cart</button>
+    <div id="hiddenCart" class="w3-container w3-content w3-padding-64" style="max-width:800px">
+      <h1>Your Cart</h1>
+      <div id="cartTotal">Your cart is empty...</div><br>
+      <form action="#" >
+        <label for="firstName">First Name:</label><br>
+        <input type="text" name="firstName" ><br>
+
+        <label for="lastName">Last Name:</label><br>
+        <input type="text" name="lastName" ><br>
+
+        <label for="address">Address:</label><br>
+        <input type="text" name="address" ><br>
+
+        <label for="zip">Zip Code:</label><br>
+        <input type=number name=zip><p>
+
+        <label for="email">Email:</label><br>
+        <input type=email name=email><p>
+
+        <label for="phone">Phone Number:</label><br>
+        <input type="text" name="phone" ><br>
+
+        <label for="cardnum">Card Number:</label><br>
+        <input type="text" name=cardnum><p>
+
+        <label for="expiry">Expiration Date:</label><br>
+        <input class="border" id="expiry" type="month" min="2022-12" value="2022-12" name="expiry"/> <br>                  
+      <p>
+
+      <button class="buyButton">Purchase Tickets</button>
+      </form>
+
+      <!-- placeholder for receipt -->
+      <div class="receipt" id="demo"></div>
+      <script type="text/javascript" src="tour.js"></script>
+      </div>
+    </div>
+  </div>
+
+</body>
