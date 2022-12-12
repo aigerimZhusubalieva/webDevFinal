@@ -1,112 +1,131 @@
 :root {
---lightBlue: #5bc2e7;
---mediumBlue: #1a9ac8;
---darkBlue: #237694;
---lightPink: #ffafdf;
---mediumPink: #ff8bd1;
---darkPink: #eb8ec5;
---lightRed: #ea555e;
---darkRed: #e03354;
---darkGreen: #519137;
---lightGreen: #6cc249;
---lightYellow: #fff260;
---darkYellow: #eff1a7;
+  --lightBlue: #5bc2e7;
+  --mediumBlue: #1a9ac8;
+  --darkBlue: #237694;
+  --lightPink: #ffafdf;
+  --mediumPink: #ff8bd1;
+  --darkPink: #eb8ec5;
+  --lightRed: #ea555e;
+  --darkRed: #e03354;
+  --darkGreen: #519137;
+  --lightGreen: #6cc249;
+  --lightYellow: #fff260;
+  --darkYellow: #eff1a7;
 }
 
-@font-face{
-	font-family: Peppa;
-	src: url("style/Peppa.ttf");
+@font-face {
+  font-family: Peppa;
+  src: url("style/Peppa.ttf");
 }
 
 body {
-/*	font-family: "Lato", sans-serif*/
-	font-family: "Georgia";
+  /*	font-family: "Lato", sans-serif*/
+  font-family: "Georgia";
 }
 
-h1, h2, h3, h4, h5, h6, button, a, .peppaFont{
-	font-family: "Peppa";
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+a,
+.peppaFont {
+  font-family: "Peppa";
 }
 
 .mySlides {
-	display: none
+  display: none;
 }
 
-.w3-top, .w3-dropdown-content{
-	background-color: #1a9ac8!important;
-	color: #ffafdf!important;
-	box-shadow: none;
-	font-size: 20px;
+.w3-top,
+.w3-dropdown-content {
+  background-color: #1a9ac8 !important;
+  color: #ffafdf !important;
+  box-shadow: none;
+  font-size: 20px;
 }
 
-.w3-button:hover, .w3-button:enabled{
-	color:#237694!important;
-	background-color:#ff8bd1!important;
+.w3-button:hover,
+.w3-button:enabled {
+  color: #237694 !important;
+  background-color: #ff8bd1 !important;
 }
 
-#contact{
-	width: 100vw;
-	background-color: #52bdeb;
-	padding: 0 20vw;
-	color: white;
+#contact {
+  width: 100vw;
+  background-color: #52bdeb;
+  padding: 0 20vw;
+  color: white;
 }
 
-#contactImg{
-	position: relative;
-	bottom: 120px;
+#contactImg {
+  position: relative;
+  bottom: 120px;
 }
 
 .tourDiv {
-	background-color: #1E123A;
-	color: white;
+  background-color: #1e123a;
+  color: white;
 }
 
 .cityBar {
-	color: #1E123A;
-	background-color: #ffafdf;
-	transition-duration: 0.3s;
-	border: solid #ff8bd1 !important;
-
+  color: #1e123a;
+  background-color: #ffafdf;
+  transition-duration: 0.3s;
+  border: solid #ff8bd1 !important;
 }
 
 .cityBar:hover {
-	background-color: #ff8bd1;
+  background-color: #ff8bd1;
 }
 
-#nyc, #seattle, #la, #london, #paris, #rome, #ad, #tokyo, #sydney {
-	width: 35%;
-	border-color: #ff8bd1; 
-	border-radius: 3px;
-	box-sizing: border-box;
-	display: inline;
-	margin-left: 10%;
-	resize: vertical;
+#nyc,
+#seattle,
+#la,
+#london,
+#paris,
+#rome,
+#ad,
+#tokyo,
+#sydney {
+  width: 35%;
+  border-color: #ff8bd1;
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: inline;
+  margin-left: 10%;
+  resize: vertical;
 }
 
 .buyButton {
-	color: #1E123A;
-	background-color: #ffafdf;
-	transition-duration: 0.3s;
-	border: solid #ff8bd1 !important;
-  	padding: 8px 16px;
-  	text-align: center;
-  	display: inline-block;
-  	border-radius: 12px;
-  	transition-duration: 0.3s;
-  	cursor: pointer;
-  	text-decoration: none;
-  	margin-bottom: 10%;
+  color: #1e123a;
+  background-color: #ffafdf;
+  transition-duration: 0.3s;
+  border: solid #ff8bd1 !important;
+  padding: 8px 16px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 12px;
+  transition-duration: 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+  margin-bottom: 10%;
 }
 
 .buyButton:hover {
-	background-color: #ff8bd1;
+  background-color: #ff8bd1;
 }
 
 .tourCart {
-	background-color: #5bc2e7;
-	padding: 2%; 
+  background-color: #5bc2e7;
+  padding: 2%;
 }
 
-input[type=text], select, textarea {
+input[type="text"],
+select,
+textarea {
   padding: 10px;
   width: 100%;
   border: 1px solid #a7767c;
@@ -115,7 +134,10 @@ input[type=text], select, textarea {
   resize: vertical;
 }
 
-input[type=number], input[type=email], select, textarea {
+input[type="number"],
+input[type="email"],
+select,
+textarea {
   padding: 10px;
   width: 100%;
   border: 1px solid #a7767c;
@@ -125,6 +147,6 @@ input[type=number], input[type=email], select, textarea {
 }
 
 .receipt {
-	border-radius: 10px;
-	padding: 10px;
+  border-radius: 10px;
+  padding: 10px;
 }

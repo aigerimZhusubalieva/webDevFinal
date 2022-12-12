@@ -1,0 +1,260 @@
+#asg5 {
+  /* height: 200vh; */
+  width: 100%;
+  padding-top: 7rem;
+  margin-bottom: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.heading {
+  padding: 0 4rem;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.heading button {
+  width: 8rem !important;
+  margin-top: 0 !important;
+}
+
+#asg5 > h2 {
+  margin-bottom: 1rem;
+}
+
+#cart {
+  display: none;
+  position: fixed;
+  padding: 2rem;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  min-height: 100%;
+  width: 60vw;
+  background-color: var(--cardClr);
+  overflow-y: scroll;
+}
+
+#cart_list {
+  width: 100%;
+  height: 100%;
+  margin-top: 2rem;
+  overflow-y: scroll;
+}
+
+#cart_list > li > div:first-child {
+  /* width: 8rem; */
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+#cart_list li {
+  margin-bottom: 2rem;
+  width: 90%;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border: 0.1px solid var(--txtClr); */
+  background-color: var(--cardClr);
+}
+
+.control:hover {
+  cursor: pointer;
+}
+
+#cart_list > li > div:last-child {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+#cart_list span {
+  margin: 0.5rem;
+  width: 1rem;
+  user-select: none;
+}
+
+#cart_list img {
+  width: 8rem;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+#total_con {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+input,
+select {
+  display: block;
+  height: 2.25rem;
+  width: 100%;
+  color: var(--bgClr);
+  border-radius: 0.125rem;
+  border: 1px solid var(--backClr);
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 300;
+}
+
+.close {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  width: 2rem;
+  height: 2rem;
+  opacity: 0.3;
+}
+
+.close:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.close:before,
+.close:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 2rem;
+  width: 2px;
+  background-color: white;
+}
+
+.close:before {
+  transform: rotate(45deg);
+}
+
+.close:after {
+  transform: rotate(-45deg);
+}
+
+.pressed {
+  opacity: 0.8;
+}
+
+#products {
+  /* margin-top: 12rem; */
+  width: 60rem;
+  /* height: ; */
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+article {
+  background: var(--cardClr);
+  padding: 2rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 25%;
+  width: 25rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+}
+
+#receipt_list {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+#receipt_list li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 3rem;
+}
+
+#receipt_list > li > div:last-child {
+  display: flex;
+
+  gap: 4rem;
+}
+
+#products > li {
+  width: calc(100% / 4.5);
+  height: 26rem;
+  list-style: none;
+  /* border: 0.1px solid var(--txtClr); */
+  background-color: var(--cardClr);
+}
+
+#products > li > img {
+  width: 100%;
+  aspect-ratio: 10/12;
+  object-fit: cover;
+}
+
+#products > li > div {
+  height: 10rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  padding: 0 1rem 1rem 1rem;
+}
+
+#products > li > div > p:first-child {
+  font-size: 1.1rem;
+}
+
+#asg5 button,
+#checkout {
+  margin-top: 2rem;
+  background: var(--btnClr);
+  height: 2rem;
+  width: 100%;
+  font-family: "Poppins";
+  padding: 0 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.125rem;
+  color: var(--backClr);
+  cursor: pointer;
+}
+
+.display {
+  display: block !important;
+}
+
+@media screen and (max-width: 70rem) {
+  #products {
+    width: 40rem;
+  }
+
+  #products > li {
+    width: calc(100% / 3.4);
+  }
+}
+
+@media screen and (max-width: 45rem) {
+  #asg5 {
+    padding: 0 4rem;
+    margin-top: 10rem;
+  }
+
+  #cart {
+    width: 100%;
+  }
+
+  #products {
+    width: 40rem;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+  }
+}
