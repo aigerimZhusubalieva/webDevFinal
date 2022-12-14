@@ -5,6 +5,7 @@ const products = [
     name: "Black T-Shirt Peppa Pig",
     imageUrl:
       "https://m.media-amazon.com/images/I/A13usaonutL._AC_CLa%7C2140%2C2000%7C71v7DX0HEVL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_UY1000_.png",
+    id_name: "product1",
   },
   {
     id: 1,
@@ -12,6 +13,7 @@ const products = [
     name: "Mommy Pig T-Shirt",
     imageUrl:
       "https://m.media-amazon.com/images/I/B139gQIcJCS._AC_CLa%7C2140%2C2000%7C81wBA6ji6bL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_UY1000_.png",
+    id_name: "product2", 
   },
   {
     id: 2,
@@ -19,6 +21,7 @@ const products = [
     name: "Papa Pig Dad Joke T-Shirt",
     imageUrl:
       "https://i5.walmartimages.com/asr/468a4668-95b1-4280-b195-ff34eca75cb9.f3cbefa4c929211284622593ef104441.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+    id_name: "product3",
   },
   {
     id: 3,
@@ -26,6 +29,7 @@ const products = [
     name: "Thug Life",
     imageUrl:
       "https://graphicteeshq.com/wp-content/uploads/2019/10/Peppa-Pig-Thug-Life.jpg",
+    id_name: "product4",
   },
   {
     id: 4,
@@ -33,13 +37,15 @@ const products = [
     name: "Daddy",
     imageUrl:
       "https://peppatees.com/wp-content/uploads/Peppa-Pig-Daddy-Pig-Kids-T-Shirt-Navy.jpg",
+    id_name: "product5",
   },
   {
     id: 5,
     cost: 22.90,
-    name: "Daddy",
+    name: "Peppa Hangs Up Phone",
     imageUrl:
       "https://cdn.media.amplience.net/s/hottopic/14352701_hi?$productMainDesktop$",
+    id_name: "product6",
   },
 ];
 
@@ -90,6 +96,8 @@ const createContainer = (id, name, cost) => {
 
 const createListItem = (product) => {
   const item = document.createElement("li");
+  item.setAttribute("id", product.id_name);
+  item.setAttribute("class", "productGroup");
   item.appendChild(createImage(product.imageUrl));
   item.appendChild(createContainer(product.id, product.name, product.cost));
   return item;
