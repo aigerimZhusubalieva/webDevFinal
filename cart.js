@@ -13,7 +13,7 @@ const products = [
     name: "Mommy Pig T-Shirt",
     imageUrl:
       "https://m.media-amazon.com/images/I/B139gQIcJCS._AC_CLa%7C2140%2C2000%7C81wBA6ji6bL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_UY1000_.png",
-    id_name: "product2", 
+    id_name: "product2",
   },
   {
     id: 2,
@@ -41,7 +41,7 @@ const products = [
   },
   {
     id: 5,
-    cost: 22.90,
+    cost: 22.9,
     name: "Peppa Hangs Up Phone",
     imageUrl:
       "https://cdn.media.amplience.net/s/hottopic/14352701_hi?$productMainDesktop$",
@@ -253,5 +253,39 @@ const getReceipt = (e) => {
   openCheckout();
   updateReceipt();
 };
+
+$(document).ready(function () {
+  $("#send").click(function () {
+    //Define the data to be sent by the post method var data = {parameter name : value};
+    var data = {
+      namae: $("#namae").val(),
+      email: $("#email").val(),
+      ask: $("#ask").val(),
+    };
+
+    $.ajax({
+      type: "post",
+      url: "send.php",
+      data: data,
+      //If Ajax communication succeeds
+      success: function (data, dataType) {
+        //Displaying the data returned from PHP
+        alert(data);
+
+        //Reset the form content after submission.
+        if (data == "Transmission complete.") {
+          document.forms[0].elements[0].value = "";
+          document.forms[0].elements[1].value = "";
+          document.forms[0].elements[2].value = "";
+        }
+      },
+      //Message when Ajax communication fails
+      error: function () {
+        alert("Failed to send email.");
+      },
+    });
+    return false;
+  });
+});
 
 document.addEventListener("DOMContentLoaded", updateProducts);
