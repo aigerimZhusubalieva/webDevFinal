@@ -229,63 +229,50 @@ const openReceipt = () => {
 
 const openCheckout = () => {
   document.body.classList.toggle("bl");
+
+  $.ajax({
+    type: "post",
+    url: "save_cart.php",
+    data: cart,
+    // //If Ajax communication succeeds
+    // success: function (data, dataType) {
+    //   //Displaying the data returned from PHP
+    //   alert(data);
+
+    //   //Reset the form content after submission.
+    //   if (data == "Transmission complete.") {
+    //     document.forms[0].elements[0].value = "";
+    //     document.forms[0].elements[1].value = "";
+    //     document.forms[0].elements[2].value = "";
+    //   }
+    // },
+    // //Message when Ajax communication fails
+    // error: function () {
+    //   alert("Failed to send email.");
+    // },
+  });
   document.getElementById("get_checkout").classList.toggle("display");
   updateReceipt();
 };
 
-const getReceipt = (e) => {
-  e.preventDefault();
-  var formData = new FormData(e.target);
+// const getReceipt = (e) => {
+//   e.preventDefault();
+//   var formData = new FormData(e.target);
 
-  for (var pair of formData.entries()) {
-    if (pair[0] == "person_name")
-      document.getElementById("receipt_name").textContent = pair[1];
-    else if (pair[0] == "email")
-      document.getElementById("receipt_email").textContent = pair[1];
-    else if (pair[0] == "zip")
-      document.getElementById("receipt_zip").textContent = pair[1];
-    else {
-      document.getElementById("receipt_card").textContent =
-        "xxxx xxxx xxxx " + pair[1].slice(12, 17);
-    }
-  }
-  openReceipt();
-  openCheckout();
-  updateReceipt();
-};
-
-$(document).ready(function () {
-  $("#send").click(function () {
-    //Define the data to be sent by the post method var data = {parameter name : value};
-    var data = {
-      namae: $("#namae").val(),
-      email: $("#email").val(),
-      ask: $("#ask").val(),
-    };
-
-    $.ajax({
-      type: "post",
-      url: "send.php",
-      data: data,
-      //If Ajax communication succeeds
-      success: function (data, dataType) {
-        //Displaying the data returned from PHP
-        alert(data);
-
-        //Reset the form content after submission.
-        if (data == "Transmission complete.") {
-          document.forms[0].elements[0].value = "";
-          document.forms[0].elements[1].value = "";
-          document.forms[0].elements[2].value = "";
-        }
-      },
-      //Message when Ajax communication fails
-      error: function () {
-        alert("Failed to send email.");
-      },
-    });
-    return false;
-  });
-});
-
+//   for (var pair of formData.entries()) {
+//     if (pair[0] == "person_name")
+//       document.getElementById("receipt_name").textContent = pair[1];
+//     else if (pair[0] == "email")
+//       document.getElementById("receipt_email").textContent = pair[1];
+//     else if (pair[0] == "zip")
+//       document.getElementById("receipt_zip").textContent = pair[1];
+//     else {
+//       document.getElementById("receipt_card").textContent =
+//         "xxxx xxxx xxxx " + pair[1].slice(12, 17);
+//     }
+//   }
+//   openReceipt();
+//   openCheckout();
+//   updateReceipt();
+// };
 document.addEventListener("DOMContentLoaded", updateProducts);

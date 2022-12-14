@@ -1,4 +1,4 @@
-#asg5 {
+#merch {
   /* height: 200vh; */
   position: relative;
   width: 100%;
@@ -24,7 +24,7 @@
   margin-top: 0 !important;
 }
 
-#asg5 > h2 {
+#merch > h2 {
   margin-bottom: 1rem;
 }
 
@@ -182,7 +182,7 @@ select {
   font-size: 1.1rem;
 }
 
-#asg5 button,
+#merch button,
 #checkout {
   margin-top: 2rem;
   background: var(--mediumPink);
@@ -216,7 +216,7 @@ select {
 }
 
 @media screen and (max-width: 45rem) {
-  #asg5 {
+  #merch {
     padding: 0 4rem;
     margin-top: 8rem;
   }
@@ -253,11 +253,49 @@ article input[type="submit"] {
   display: block;
   height: 2.25rem;
   width: 100%;
-  color: var(--bgClr);
+  color: var(--darkBlue);
   border-radius: 0.125rem;
-  border: 1px solid var(--backClr);
+  background: var(--mediumPink);
   padding-left: 1rem;
   margin-top: 0.5rem;
   font-size: 0.875rem;
   font-weight: 300;
+  cursor: pointer;
+}
+
+#receipt_cont {
+  position: relative;
+  width: 100%;
+  padding: 0 4rem;
+  padding-top: 7rem;
+  margin-bottom: 8rem;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#receipt_cont article {
+  display: block;
+}
+
+#receipt_list {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+#receipt_list li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 3rem;
+}
+
+#receipt_list > li > div:last-child {
+  display: flex;
+
+  gap: 4rem;
 }

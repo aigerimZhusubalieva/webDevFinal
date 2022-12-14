@@ -149,7 +149,7 @@
       </div>
       <button id="checkout" onclick="openCheckout()">Checkout</button>
     </aside>
-    <section id="asg5">
+    <section id="merch">
       <div class="heading">
         <h2>Products</h2>
         <button onclick="openCart()">Cart</button>
@@ -159,20 +159,33 @@
     <article id="get_checkout">
       <h2>Checkout</h2>
       <div class="close" onclick="openCheckout()"></div>
-      <form onsubmit="getReceipt(event)">
+      <form method="post" action="receipt.php">
         <label>Name</label>
-        <input minlength="1" required type="text" name="person_name" />
+        <input
+          minlength="1"
+          id="name"
+          required
+          type="text"
+          name="person_name"
+        />
         <label>Email</label>
         <input
           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
           required
           type="email"
           name="email"
+          id="email"
         />
         <label>Zip</label>
-        <input required pattern="[\d ]{5}" type="text" name="zip" />
+        <input required pattern="[\d ]{5}" id="zip" type="text" name="zip" />
         <label>Card number</label>
-        <input pattern="[\d ]{16}" type="text" name="card_number" required />
+        <input
+          pattern="[\d ]{16}"
+          id="card"
+          type="text"
+          name="card_number"
+          required
+        />
         <input type="submit" name="submit" value="submit" />
       </form>
     </article>

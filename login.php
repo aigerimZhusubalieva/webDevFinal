@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<title>Peppa Pig Official</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" type="text/css" href="login.css">
-<link rel="icon" type="image/x-icon" href="img/icon1.png">
-<script type="text/javascript" src="script.js" defer></script>
+    <title>Peppa Pig Official</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <link rel="icon" type="image/x-icon" href="img/icon1.png">
+    <script type="text/javascript" src="script.js" defer></script>
 </head>
 
 
@@ -42,62 +43,65 @@
         </div>
     </div>
 
-<?php
-    $fname = $_POST['fname'];
-    $email = $_POST['email'];
+    <?php
+$fname = $_POST['fname'];
+$email = $_POST['email'];
 
-    $filename = "users.txt";
+$filename = "users.txt";
 
-    function login(){
-        $loginflag = FALSE;
-        global $fname, $email, $filename;
+function login()
+{
+    $loginflag = FALSE;
+    global $fname, $email, $filename;
 
 
-        $file1 = fopen($filename, 'r')  or die("<script>alert('Errors reading from the file');</script>");
+    $file1 = fopen($filename, 'r') or die("<script>alert('Errors reading from the file');</script>");
 
-        while (!(feof($file1))){
-            $line = fgets($file1);
-            $line = trim($line);
-            $info = explode(":", $line);
+    while (!(feof($file1))) {
+        $line = fgets($file1);
+        $line = trim($line);
+        $info = explode(":", $line);
 
-            if (($info[0] == $fname) && ($info[1] == $email)){
-                $loginflag = TRUE;
-                break;
-            }
+        if (($info[0] == $fname) && ($info[1] == $email)) {
+            $loginflag = TRUE;
+            break;
         }
-        if ($loginflag){
-            header('Location:https://i6.cims.nyu.edu/~az2177/finalProject/index.html');
-        }else{
-            echo "<script>alert('Please enter a valid user name and email!');</script>";
-        }
-        fclose($file1);
     }
-
-    function store(){
-        global $fname, $email, $filename;
-        $file1 = fopen($filename, 'a') or die("<script>alert('Errors opening the file');</script>");
-        
-        $line = $fname . ":" . $email . "\n";
-        
-        fwrite($file1, $line);
-        
-        fclose($file1);
-        
+    if ($loginflag) {
         header('Location:https://i6.cims.nyu.edu/~az2177/finalProject/index.html');
+    } else {
+        echo "<script>alert('Please enter a valid user name and email!');</script>";
     }
+    fclose($file1);
+}
 
-    if (isset($_POST['register'])){
-        if($fname == '' or $email == ''){
-            echo "<script>alert('Please enter a valid user name and email!');</script>";
-        }
-        store();
-    }elseif (isset($_POST['login'])){
-        if($fname == '' or $email == ''){
-            echo "<script>alert('Please enter a valid user name and email!');</script>";
-        }
-        login();
-    }          
+function store()
+{
+    global $fname, $email, $filename;
+    $file1 = fopen($filename, 'a') or die("<script>alert('Errors opening the file');</script>");
+
+    $line = $fname . ":" . $email . "\n";
+
+    fwrite($file1, $line);
+
+    fclose($file1);
+
+    header('Location:https://i6.cims.nyu.edu/~az2177/finalProject/index.html');
+}
+
+if (isset($_POST['register'])) {
+    if ($fname == '' or $email == '') {
+        echo "<script>alert('Please enter a valid user name and email!');</script>";
+    }
+    store();
+} elseif (isset($_POST['login'])) {
+    if ($fname == '' or $email == '') {
+        echo "<script>alert('Please enter a valid user name and email!');</script>";
+    }
+    login();
+}
 ?>
 
 </body>
+
 </HTML>
