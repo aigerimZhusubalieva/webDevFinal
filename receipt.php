@@ -60,7 +60,7 @@
             $card = $_POST['card_number'];
             $zip = $_POST['zip'];
             $file = fopen("cart.json", "r");
-            $totalval = 0;
+            $totalval = 10;
             ?>
             <div>
                 <h2>Receipt</h2>
