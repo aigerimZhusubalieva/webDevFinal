@@ -1,6 +1,6 @@
 black t-shirt peppa pig:1
 mommy pig t-shirt pink:2
-papa pig dad joke t-shirt red:3
-thug life t-shirt white:4
-daddy t-shirt blue:5
+papa pig dad joke t-shirt red daddy:3
+thug life t-shirt white peppa:4
+daddy t-shirt blue papa dad:5
 peppa hangs up phone t-shirt black:6

@@ -25,11 +25,10 @@
           $("#product5").hide();
           $("#product6").hide();
           var idArr = [];
-          //console.log("hello;")
-          $(".productGroup").each(function(){
+          console.log("hello;")
+          $(".results").each(function(){
             idArr.push($(this).attr("id"));
             console.log($(this).attr("id"));
-            //this.hide();
           });
 
           for(var i=0; i<idArr.length; i++){
@@ -38,7 +37,7 @@
             console.log(i);
 
             
-            $(temp).show();
+            //$(temp).show();
           }
 
       });
@@ -91,41 +90,79 @@
             >
           </div>
         </div>
-        <input class="w3-right" type="text" id="search" name="search" style="width:160px; margin-right: 1%;">
-        <a onclick="inputShow()" id="searchBtn" 
+        <form action="search.php" method="post">
+          <input
+            class="w3-right"
+            type="text"
+            id="search"
+            name="productName"
+            style="width: 160px; margin-right: 1%"
+          />
+        </form>
+        <a
+          onclick="inputShow()"
+          id="searchBtn"
           href="javascript:void(0)"
           class="w3-padding-large w3-hover-purple w3-hide-small w3-right"
           ><i class="fa fa-search"></i
         ></a>
-
       </div>
     </div>
 
     <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-  <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">PEPPA</a>
-  <a href="tour.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
-  <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
-  <a href="merch.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
-  <a href="media.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MEDIA</a>
-  <a href="newsletter.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">NEWSLETTER</a>
-</div>
+    <div
+      id="navDemo"
+      class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top"
+      style="margin-top: 46px"
+    >
+      <a
+        href="#band"
+        class="w3-bar-item w3-button w3-padding-large"
+        onclick="myFunction()"
+        >PEPPA</a
+      >
+      <a
+        href="tour.html"
+        class="w3-bar-item w3-button w3-padding-large"
+        onclick="myFunction()"
+        >TOUR</a
+      >
+      <a
+        href="#contact"
+        class="w3-bar-item w3-button w3-padding-large"
+        onclick="myFunction()"
+        >CONTACT</a
+      >
+      <a
+        href="merch.html"
+        class="w3-bar-item w3-button w3-padding-large"
+        onclick="myFunction()"
+        >MERCH</a
+      >
+      <a
+        href="media.html"
+        class="w3-bar-item w3-button w3-padding-large"
+        onclick="myFunction()"
+        >MEDIA</a
+      >
+      <a
+        href="newsletter.html"
+        class="w3-bar-item w3-button w3-padding-large"
+        onclick="myFunction()"
+        >NEWSLETTER</a
+      >
+    </div>
 
 <?php 
-// PHP program to check if a 
-// string is substring of other. 
-// Returns true if s1 is substring of s2 
 function isSubstring($str1, $str2) {
 $s1 = strtolower($str1);
 $s2 = strtolower($str2);
 $M = strlen($s1); 
 $N = strlen($s2); 
-// A loop to slide 
-// pat[] one by one 
+
 for ($i = 0; $i <= $N - $M; $i++) { 
 $j = 0; 
-// For current index i, 
-// check for pattern match 
+
 for (; $j < $M; $j++) 
 if ($s2[$i + $j] != $s1[$j]) 
 break; 
@@ -139,59 +176,40 @@ $productName = $_POST['productName'];
 
 $file = fopen("product.txt", "r");
 
-$flag = FALSE;
-
-// read one line at time from file and assign each line to a string called $line
-
 $results = array();
 
 while(!(feof($file)))
 {
 
 $index = 0;
-// get one line at time from file
+
 $line= fgets($file);
 
-// remove end of line character from line using rtrim function
 $line = rtrim($line);
-
-// split string on : to get each field separatly and put values in an array
 
 $info = explode(":", $line);
 
-// check for a product match between what user input and 
-// whats in file convert both strings to lowercase
-
 if (isSubstring($productName,$info[0])!= -1)
 {
-	//print("<p>$info[0], $info[1]</p>");
 	array_push($results, $info[1]);
-//array_push($results, $info[1]);
-	//print_r($results);
 	$index++;
-// if there is a match set flag to true and exit
-//$flag = TRUE;
-//break;
 }
 
 }
 
-// check to see if there is a match flag = TRUE 
 
 if (count($results)>0)
 	{
-	//print(" <h2>Here is information about this product:</h2>");
 	
 	for($i=0;$i<count($results);$i++)
 		{ 
-		//print("<li> $results[$i] ");
 print("<p class='results' id='product$results[$i]'>"); 
 		}
 	
 	}
 else
 {
-	print(" <h3>Sorry, we do not have the product you are searching for :(</h3>");
+	print("Sorry- We don't have the Product that you are searching for!");
 }
 
 ?>
@@ -212,25 +230,74 @@ else
           <span id="total_val"></span>
         </div>
       </div>
-      <!-- <button id="checkout" onclick="openCheckout()">Checkout</button> -->
+      <button id="checkout" onclick="openCheckout()">Checkout</button>
     </aside>
-    <section id="asg5">
+    <section id="merch">
       <div class="heading">
         <h2>Products</h2>
         <button onclick="openCart()">Cart</button>
       </div>
       <ul id="products"></ul>
     </section>
+    <article id="get_checkout">
+      <h2>Checkout</h2>
+      <div class="close" onclick="openCheckout()"></div>
+      <form method="post" action="receipt.php">
+        <label>Name</label>
+        <input
+          minlength="1"
+          id="name"
+          required
+          type="text"
+          name="person_name"
+        />
+        <label>Email</label>
+        <input
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          required
+          type="email"
+          name="email"
+          id="email"
+        />
+        <label>Zip</label>
+        <input required pattern="[\d ]{5}" id="zip" type="text" name="zip" />
+        <label>Card number</label>
+        <input
+          pattern="[\d ]{16}"
+          id="card"
+          type="text"
+          name="card_number"
+          required
+        />
+        <input type="submit" name="submit" value="submit" />
+      </form>
+    </article>
 
     <!-- Image of location/map -->
     <!-- <img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%"> -->
 
     <!-- Footer -->
-  <footer class="w3-container w3-center w3-xlarge w3-padding-64" style="background-color: #1a9ac8">
-  <a href="https://www.facebook.com/OfficialPeppaPig" class="fa fa-facebook-official w3-hover-opacity" style="text-decoration: none;"></a>
-  <a href="https://www.instagram.com/officialpeppa/" class="fa fa-instagram w3-hover-opacity" style="text-decoration: none;"></a>
-  <a href="https://twitter.com/peppapig" class="fa fa-twitter w3-hover-opacity" style="text-decoration: none;"></a><br>
-</footer>
+    <footer
+      class="w3-container w3-center w3-xlarge w3-padding-64"
+      style="background-color: #1a9ac8"
+    >
+      <a
+        href="https://www.facebook.com/OfficialPeppaPig"
+        class="fa fa-facebook-official w3-hover-opacity"
+        style="text-decoration: none"
+      ></a>
+      <a
+        href="https://www.instagram.com/officialpeppa/"
+        class="fa fa-instagram w3-hover-opacity"
+        style="text-decoration: none"
+      ></a>
+      <a
+        href="https://twitter.com/peppapig"
+        class="fa fa-twitter w3-hover-opacity"
+        style="text-decoration: none"
+      ></a
+      ><br />
+    </footer>
   </body>
 </html>
 
