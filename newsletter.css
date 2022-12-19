@@ -1,0 +1,76 @@
+.newsletter-banner {
+  height: 15rem;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  background-image: url("img/3.jpeg");
+  background-position: 0;
+  width: 100%;
+  align-items: center;
+}
+
+#newsletter {
+  /* margin: 1rem; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.newsletter-banner > div {
+  color: var(--darkGreen);
+  background: var(--lightYellow);
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Peppa";
+  margin-bottom: 1rem;
+}
+
+.newsletter-body {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background: var(--lightGreen);
+}
+
+.newsletter-form {
+  width: 30rem;
+  color: var(--darkYellow);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.newsletter-form input {
+  margin-top: 0.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--darkYellow);
+  border-radius: 0;
+  background: none;
+  color: var(--darkYellow);
+}
+
+.newsletter-form input[type="submit"] {
+  cursor: pointer;
+  background: var(--lightYellow);
+  color: var(--darkGreen);
+}
+
+.titles {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  list-style: none;
+  border: 1px solid var(--darkYellow);
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+.control {
+  background: var(--lightYellow);
+  color: var(--darkGreen);
+}
