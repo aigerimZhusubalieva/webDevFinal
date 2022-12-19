@@ -69,11 +69,10 @@
 
                 $fullname = $fname + " " + $lname;
                 $message = "Thank you for providing your email, $title $fullname";
-                $mailHeaders = "Name: " . $fullname .
-                    "\r\n Email: " . $email .
-                    "\r\n Message: " . $message . "\r\n";
-
-                mail($email, $fullname, $mailHeaders);
+                $headers = 'From: chinakarishev@gmail.com' . "\r\n" .
+                    'Reply-To: chinakarishev@gmail.com' . "\r\n" .
+                    'X-Mailer: PHP/' . phpversion();
+                mail($email, $fullname, $message, $headers);
                 ?>
                 <p>Email successfully added to our newsletter! </p>
             </div>
