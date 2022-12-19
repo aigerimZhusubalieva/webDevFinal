@@ -3,15 +3,14 @@ const possibleTitles = ["one", "two", "three", "four"];
 const numToTitle = { 1: "Mr.", 2: "Ms.", 3: "Mrs.", 4: "Prof." };
 
 const titleHandler = (e) => {
-  const titles = document.querySelectorAll(".title");
-  titles.forEach((title) => {
-    title.classList.remove("control");
-  });
-  possibleTitles.forEach((val, ind) => {
-    chosenTitle = e.target.classList.contains(val) ? ind + 1 : chosenTitle;
-  });
-
-  e.target.classList.add("control");
+  // const titles = document.querySelectorAll(".title");
+  // titles.forEach((title) => {
+  //   title.classList.remove("control");
+  // });
+  // possibleTitles.forEach((val, ind) => {
+  //   chosenTitle = e.target.classList.contains(val) ? ind + 1 : chosenTitle;
+  // });
+  // e.target.classList.add("control");
 };
 
 const submitNewsHandler = (e) => {
@@ -25,16 +24,15 @@ const submitNewsHandler = (e) => {
     title: numToTitle[chosenTitle],
   };
   for (let pair of formData.entries()) {
-    // console.log(pair);
     sendingData[pair[0]] = pair[1];
   }
   console.log(sendingData);
   $.ajax({
-    type: "GET",
+    type: "POST",
     url: "news_email.php",
     data: sendingData,
     success: function (data) {
-      window.location.href = "news_email.php";
+      window.location = "news_email.php";
     },
     error: function () {},
   });

@@ -66,11 +66,25 @@
 .title {
   list-style: none;
   border: 1px solid var(--darkYellow);
-  padding: 1rem 2rem;
+  /* padding: 1rem 2rem; */
   cursor: pointer;
 }
 
-.control {
+.title input {
+  display: none;
+}
+.title label {
+  display: inline-block;
+  /* background-color: #ddd; */
+  padding: 1rem 2rem;
+  height: 100%;
+  width: 100%;
+  font-family: Arial;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.title input[type="radio"]:checked + label {
   background: var(--lightYellow);
   color: var(--darkGreen);
 }

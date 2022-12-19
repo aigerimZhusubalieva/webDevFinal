@@ -121,7 +121,8 @@
         </div>
       </div>
       <article class="newsletter-body">
-        <form onsubmit="submitNewsHandler(event)" class="newsletter-form">
+        <!-- <form onsubmit="submitNewsHandler(event)" action="news_email.php" class="newsletter-form"> -->
+        <form method="post" action="news_email.php" class="newsletter-form">
           <div>
             <label>Email*</label>
             <input
@@ -148,11 +149,27 @@
             <label>Title*</label>
             <ul class="titles">
               <li onclick="titleHandler(event)" class="title control one">
-                Mr.
+                <input
+                  type="radio"
+                  checked="checked"
+                  name="title"
+                  value="Mr."
+                  id="radio1"
+                />
+                <label for="radio1">Mr.</label>
               </li>
-              <li onclick="titleHandler(event)" class="title two">Ms.</li>
-              <li onclick="titleHandler(event)" class="title three">Mrs.</li>
-              <li onclick="titleHandler(event)" class="title four">Prof.</li>
+              <li onclick="titleHandler(event)" class="title two">
+                <input type="radio" name="title" value="Ms." id="radio2" />
+                <label for="radio2">Ms.</label>
+              </li>
+              <li onclick="titleHandler(event)" class="title three">
+                <input type="radio" name="title" value="Mrs." id="radio3" />
+                <label for="radio3">Mrs.</label>
+              </li>
+              <li onclick="titleHandler(event)" class="title four">
+                <input type="radio" name="title" value="Prof." id="radio4" />
+                <label for="radio4">Prof.</label>
+              </li>
             </ul>
           </div>
           <div>
