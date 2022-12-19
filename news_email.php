@@ -66,12 +66,18 @@
                 $fname = $_POST["fname"];
                 $lname = $_POST["lname"];
                 $title = $_POST["title"];
+                $fp = fopen('emails.txt', 'a');
+                $line = $email;
+                $line .= "\n";
+                fwrite($fp, $line);
+                fclose($fp);
 
                 $message = "Thank you for providing your email, $title $fname $lname";
                 $headers = 'From: chinakarishev@gmail.com' . "\r\n" .
                     'Reply-To: chinakarishev@gmail.com' . "\r\n" .
                     'X-Mailer: PHP/' . phpversion();
                 mail($email, $fname, $message, $headers);
+
                 print("<p> $message </p>");
                 ?>
                 <p>Your email was successfully added to our newsletter! </p>
